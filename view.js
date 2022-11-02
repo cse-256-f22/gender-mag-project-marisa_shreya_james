@@ -1,7 +1,19 @@
 // ---- Define your dialogs  and panels here ----
+let permissions_panel = define_new_effective_permissions("permissions", true)
+let user_panel = define_new_user_select_field("new_user", "Choose User", function(selected_user) {$('#permissions').attr('username', selected_user) })
+let d = define_new_dialog("dialog", "AAAAAAAA")
 
+$('.fa-info-circle').click(function(){
+    let a = $('#permissions').attr('filepath')
+    let b = $('#permissions').attr('username')
+    let p = $(this).attr('permission_name')
+    let c = allow_user_action(path_to_file[a],all_users[b], p)
 
-
+    console.log(a)
+    console.log(b)
+    console.log(p)
+    console.log(c)
+    })
 // ---- Display file structure ----
 
 // (recursively) makes and returns an html element (wrapped in a jquery object) for a given file object
