@@ -1,19 +1,49 @@
 // ---- Define your dialogs  and panels here ----
+selected_file = "n/a"
+
 let permissions_panel = define_new_effective_permissions("permissions", true)
-let user_panel = define_new_user_select_field("new_user", "Choose User", function(selected_user) {$('#permissions').attr('username', selected_user) })
-let d = define_new_dialog("dialog", "AAAAAAAA")
+let user_panel = define_new_user_select_field("new_user", "Choose User", function(selected_user) {
+    $('#permissions').attr('username', selected_user) 
+    $('#permissions').attr('filepath', selected_file.id.replace('_div',''))
+})
 
-$('.fa-info-circle').click(function(){
-    let a = $('#permissions').attr('filepath')
-    let b = $('#permissions').attr('username')
-    let p = $(this).attr('permission_name')
-    let c = allow_user_action(path_to_file[a],all_users[b], p)
+$('#sidepanel').append(permissions_panel)
+$('#sidepanel').append(user_panel)
+$('#sidepanel').append("Selected File: ")
+$('#sidepanel').append(`<div id="file_div">(Click a file to select it.)</div>`)
 
-    console.log(a)
-    console.log(b)
-    console.log(p)
-    console.log(c)
-    })
+let d = define_new_dialog("dialog", "Permissions Info")
+
+// $('.fa-info-circle').click(function(){
+//     let a = $('#permissions').attr('filepath')
+//     let b = $('#permissions').attr('username')
+//     let p = $(this).attr('permission_name')
+//     let c = allow_user_action(path_to_file[a],all_users[b], p)
+
+//     console.log(a)
+//     console.log(b)
+//     console.log(p)
+//     console.log(c)
+//     })
+
+function toggleDialog(icon){
+    d.dialog('open');
+
+    filepath_obj = path_to_file[$('#permissions').attr('filepath')];
+    username_obj = all_users[$('#permissions').attr('username')];
+
+    action_allowed = allow_user_action(filepath_obj, username_obj, $(icon).attr('permission_name'), true);
+    let explainer = get_explanation_text(action_allowed);
+    d.text(explainer);
+}
+
+function getFile(file_obj){
+    selected_file = file_obj
+    $('#permissions').attr('filepath', selected_file.id.replace('_div',''))
+    $('#file_div').remove()
+    $('#sidepanel').append(`<div id="file_div"> > ${selected_file.textContent}</div>`)
+}
+
 // ---- Display file structure ----
 
 // (recursively) makes and returns an html element (wrapped in a jquery object) for a given file object
@@ -42,7 +72,7 @@ function make_file_element(file_obj) {
         return folder_elem
     }
     else {
-        return $(`<div class='file'  id="${file_hash}_div">
+        return $(`<div onclick="getFile(this)" class='file'  id="${file_hash}_div">
             <span class="oi oi-file" id="${file_hash}_icon"/> ${file_obj.filename}
             <button class="ui-button ui-widget ui-corner-all permbutton" path="${file_hash}" id="${file_hash}_permbutton"> 
                 <span class="oi oi-lock-unlocked" id="${file_hash}_permicon"/> 
