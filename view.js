@@ -45,10 +45,9 @@ function toggleDialog(icon){
 }
 
 function getFile(file_obj){
-    selected_file = file_obj
-    $('#permissions').attr('filepath', selected_file.id.replace('_div',''))
+    $('#permissions').attr('filepath', file_obj.id.replace('_div',''))
     $('#file_div').remove()
-    $('#sidepanel').append(`<div id="file_div"> > ${selected_file.textContent}</div>`)
+    $('#sidepanel').append(`<div id="file_div"> > ${file_obj.textContent}</div>`)
 }
 
 // ---- Display file structure ----
