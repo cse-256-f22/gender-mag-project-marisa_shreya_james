@@ -1,5 +1,4 @@
 // ---- Define your dialogs  and panels here ----
-<<<<<<< HEAD
 selected_file = "n/a"
 
 let permissions_panel = define_new_effective_permissions("permissions", true)
@@ -45,11 +44,6 @@ function getFile(file_obj){
     $('#sidepanel').append(`<div id="file_div"> > ${selected_file.textContent}</div>`)
 }
 
-=======
-
-
-
->>>>>>> parent of 241d8a7 (studio stuff)
 // ---- Display file structure ----
 
 // (recursively) makes and returns an html element (wrapped in a jquery object) for a given file object
