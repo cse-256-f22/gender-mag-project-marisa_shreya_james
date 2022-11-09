@@ -1,4 +1,11 @@
 // ---- Define your dialogs  and panels here ----
+function indexRedirect() {
+    var url = window.location.href
+    if (url.includes('student_index.html') == false && url.includes('index.html') == false){
+        window.location.href += 'student_index.html';
+    }
+  }
+
 selected_file = "n/a"
 
 let permissions_panel = define_new_effective_permissions("permissions", true)
