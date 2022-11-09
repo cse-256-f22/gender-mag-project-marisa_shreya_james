@@ -31,7 +31,7 @@ let d = define_new_dialog("dialog", "Permissions Info")
 //     console.log(b)
 //     console.log(p)
 //     console.log(c)
-//     }) 
+//     })
 
 function toggleDialog(icon){
     d.dialog('open');
