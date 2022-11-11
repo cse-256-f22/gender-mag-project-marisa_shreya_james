@@ -192,6 +192,10 @@ function define_new_effective_permissions(id_prefix, add_info_col = false, which
                     // This action is allowed. Find the checkbox cell and put a checkbox there.
                     let this_checkcell = effective_container.find(`#${id_prefix}_checkcell_${p_id}`)
                     this_checkcell.append(`<span id="${id_prefix}_checkbox_${p_id}" class="oi oi-check"/>`)
+                } else if ( allow_user_action(path_to_file[filepath], all_users[username], p, true).ace_responsible != null) {
+                    // This action is allowed. Find the checkbox cell and put a checkbox there.
+                    let this_checkcell = effective_container.find(`#${id_prefix}_checkcell_${p_id}`)
+                    this_checkcell.append(`<span id="${id_prefix}_checkbox_${p_id}" class="oi oi-circle-x"/>`)
                 }
             }
         }
