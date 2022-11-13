@@ -1,4 +1,11 @@
 // ---- Define your dialogs  and panels here ----
+function indexRedirect() {
+    var url = window.location.href
+    if (url.includes('student_index.html') == false && url.includes('index.html') == false){
+        window.location.href += 'student_index.html';
+    }
+  }
+
 selected_file = "n/a"
 
 let permissions_panel = define_new_effective_permissions("permissions", true)
@@ -24,7 +31,7 @@ let d = define_new_dialog("dialog", "Permissions Info")
 //     console.log(b)
 //     console.log(p)
 //     console.log(c)
-//     }) 
+//     })
 
 function toggleDialog(icon){
     d.dialog('open');
@@ -38,10 +45,9 @@ function toggleDialog(icon){
 }
 
 function getFile(file_obj){
-    selected_file = file_obj
-    $('#permissions').attr('filepath', selected_file.id.replace('_div',''))
+    $('#permissions').attr('filepath', file_obj.id.replace('_div',''))
     $('#file_div').remove()
-    $('#sidepanel').append(`<div id="file_div"> > ${selected_file.textContent}</div>`)
+    $('#sidepanel').append(`<div id="file_div"> > ${file_obj.textContent}</div>`)
 }
 
 // ---- Display file structure ----
