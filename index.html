@@ -94,7 +94,7 @@
                                 
                                 <!-- Modal Header -->
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Modal Heading</h4>
+                                    <h4 class="modal-title">Task Walkthroughs</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
                                 
@@ -102,6 +102,7 @@
                                 <div class="modal-body">
                                     <p>Click the option that corresponds to your task.</p>
                                     <div class="accordion" id="accordionExample">
+
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingOne">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -120,6 +121,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingTwo">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -139,6 +141,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingThree">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -158,6 +161,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingFour">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -181,7 +185,112 @@
                                             </div>
                                         </div>
 
-                                        
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFive">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                    intern_permissions
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li>Click the lock next to the intern_subproject folder</li>
+                                                        <li>Click the More Options button</li>
+                                                        <li>Click the Edit Button</li>
+                                                        <li>Click the Change Button</li>
+                                                        <li>Click Intern & then OK</li>
+                                                        <li>Under Allow, check create files/write data, create folders/append data, write attributes & write extended attributes</li>
+                                                        <li>Under Deny, check delete subfolders and files & delete</li>
+                                                        <li>Hit the OK button to close the modal</li>
+                                                        <li>Hit the OK button and you're done!</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingSix">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                                    remove_user_with_inheritance
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li>Click the lock next to important_file.txt</li>
+                                                        <li>Click the More Options button</li>
+                                                        <li>Uncheck 'Include inheritable permissions from this object's parent'</li>
+                                                        <li>Click Add</li>
+                                                        <li>Click OK</li>
+                                                        <li>Click employee3 under 'Group or user names:'</li>
+                                                        <li>Click Remove</li>
+                                                        <li>Click Yes</li>
+                                                        <li>Hit the OK button and you're done!</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingSeven">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                                    restrict_group_member
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li>Click the lock next to important_file.txt</li>
+                                                        <li>Click the Add button</li>
+                                                        <li>Click employee3 and hit the OK button</li>
+                                                        <li>Click employee3 under 'Group or user names:'</li>
+                                                        <li>Under the Deny column, check Write and Modify</li>
+                                                        <li>Hit the OK button and you're done!</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingEight">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                                    let_ta_modify
+                                                </button>
+                                            </h2>
+                                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li>Click the lock next to the Lecture_Notes folder</li>
+                                                        <li>Click the More Options button</li>
+                                                        <li>Check the "Replace all child object permissions with inheritable permissions from this object" box</li>
+                                                        <li>Click Yes</li>
+                                                        <li>Click OK</li>
+                                                        <li>Hit the OK button and you're done!</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingNine">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                                    lost_inheritance
+                                                </button>
+                                            </h2>
+                                            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li>Click the lock next to the Lecture_Notes folder</li>
+                                                        <li>Click the More Options button</li>
+                                                        <li>Check the "Replace all child object permissions with inheritable permissions from this object" box</li>
+                                                        <li>Click Yes</li>
+                                                        <li>Click OK</li>
+                                                        <li>Hit the OK button and you're done!</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
