@@ -6,6 +6,7 @@ function indexRedirect() {
     }
   }
 
+// sidepanel
 selected_file = "n/a"
 
 let permissions_panel = define_new_effective_permissions("permissions", true)
@@ -21,18 +22,7 @@ $('#sidepanel').append(`<div id="file_div">(Click a file to select it.)</div>`)
 
 let d = define_new_dialog("dialog", "Permissions Info")
 
-// $('.fa-info-circle').click(function(){
-//     let a = $('#permissions').attr('filepath')
-//     let b = $('#permissions').attr('username')
-//     let p = $(this).attr('permission_name')
-//     let c = allow_user_action(path_to_file[a],all_users[b], p)
-
-//     console.log(a)
-//     console.log(b)
-//     console.log(p)
-//     console.log(c)
-//     })
-
+//i-icons
 function toggleDialog(icon){
     d.dialog('open');
 
@@ -44,10 +34,31 @@ function toggleDialog(icon){
     d.text(explainer);
 }
 
+//Selected file
 function getFile(file_obj){
     $('#permissions').attr('filepath', file_obj.id.replace('_div',''))
     $('#file_div').remove()
     $('#sidepanel').append(`<div id="file_div"> > ${file_obj.textContent}</div>`)
+}
+
+//Validation function
+function validate(){
+    document.getElementById("deny-accordion").hidden = false
+    document.getElementById("allow-accordion").hidden = false
+    $('[id=allow-li]').remove()
+    $('[id=deny-li]').remove()
+    let deny_mistakes, allow_mistakes = validate_and_get_logs()
+
+    if (allow_mistakes != null || deny_mistakes != null){
+        $('#validate-header').text("❌ Your current solution is wrong.")
+        $('#validate-status').text("Keep trying though! See your mistakes below:")  
+    } else {
+        $('#validate-header').text("✔️ Your current solution is correct!")
+        $('#validate-status').text("Go ahead and submit the MTurk!")
+        $('#allow-accordion').remove()
+        $('#deny-accordion').remove()
+    }
+
 }
 
 // ---- Display file structure ----

@@ -404,6 +404,7 @@ function validate_and_get_logs() {
         }
     }
 
+
     console.log(missing_allowed, should_not_be_allowed);
     if (missing_allowed.length > 0 || should_not_be_allowed.length > 0) {
         console.error(
@@ -419,7 +420,11 @@ function validate_and_get_logs() {
                 let username = id_to_username[parseInt(ids[1])];
                 let perm = id_to_permission[parseInt(ids[2])];
                 console.log('\t', username, ': ', perm, filepath);
+
+                $(document.getElementById(`allow-list`)).append(`<li id="allow-li">'\t', ${username}, ': ', ${perm}, ${filepath}/>`)
             }
+        } else {
+            document.getElementById("allow-accordion").hidden = true;
         }
         if (missing_allowed.length > 0) {
             console.warn(
@@ -431,12 +436,17 @@ function validate_and_get_logs() {
                 let username = id_to_username[parseInt(ids[1])];
                 let perm = id_to_permission[parseInt(ids[2])];
                 console.log('\t', username, ': ', perm, filepath);
+
+                $(document.getElementById(`deny-list`)).append(`<li id="deny-li">'\t', ${username}, ': ', ${perm}, ${filepath}/>`)
             }
+        } else {
+            document.getElementById("deny-accordion").hidden = true;
         }
 
         console.error(
             'ERROR: Your current permissions state does not match the correct solution; see above for list of problems.'
         );
+        return missing_allowed, should_not_be_allowed;
     } else {
         console.log(JSON.stringify(userData));
     }
