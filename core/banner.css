@@ -29,11 +29,13 @@ span {
 .mturk-top-banner-button {
     font-size: 20px;
     line-height: 10px;
+    margin-left: 5px;
     float: right;
     color: white;
     font-style: normal;
     cursor: pointer;
     padding: 10px;
+    
     height: 31px;
     background-color: rgb(45, 49, 66);
     border: 1px white solid;

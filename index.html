@@ -73,8 +73,11 @@
                                         
                                     </p>
                                     <span id="mturk-top-banner-inner-span">
-                                        <button class ="mturk-top-banner-button" data-bs-toggle="modal" data-bs-target="#myModal">
+                                        <button class="mturk-top-banner-button" data-bs-toggle="modal" data-bs-target="#myModal">
                                             Help
+                                        </button>
+                                        <button onclick="validate()" class="mturk-top-banner-button" data-bs-toggle="modal" data-bs-target="#validateModal">
+                                            Check Answer
                                         </button>
                                         <span class="mturk-top-banner-button mturk-top-banner-back-wh footer"
                                         id="mturk-top-banner-arrow">
@@ -87,6 +90,55 @@
                             </span>
                         </span>
                     </div>
+
+                    <!-- Validate Modal -->
+                    <div class="modal" id="validateModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                
+                                <!-- Validate Modal Header -->
+                                <div class="modal-header">
+                                    <h4 id="validate-header" class="modal-title">Check Answer</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                
+                                <!-- Validate Modal body -->
+                                <div class="modal-body">
+                                    <p id="validate-status"></p>
+                                    <div class="accordion" id="accordionExample">
+                                    
+                                        <div id="allow-accordion" class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                    These are currently allowed, but should be denied.
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ol id="allow-list"></ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="deny-accordion" class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    These are currently denied, but should be allowed.
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ol id="deny-list"></ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- The Modal -->
                     <div class="modal" id="myModal">
                         <div class="modal-dialog">
