@@ -1,11 +1,13 @@
 
 .file {
     padding: 8;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #b01919;
+    padding-top: 10px;
+    font-size: 15px;
 }
 
 .section {
-    margin-bottom: 5px;
+    margin-left: 10px;
 }
 
 .ui-selected { 
