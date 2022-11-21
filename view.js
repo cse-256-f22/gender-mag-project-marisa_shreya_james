@@ -7,20 +7,21 @@ function indexRedirect() {
   }
 
 // sidepanel
-selected_file = "n/a"
+let dict = { 
+    'remove_direct_permission': '<div><ol><li>Click the lock next to important_file.txt</li><li>Click employee3</li><li>Look under the Deny column and check write & modify</li><li>Hit OK and you are done!</li></ol></div>', 
+    'add_new_user':'<div><ol><li>Click the lock next to the presentation_documents folder</li><li>Press the Add button</li><li>Select employee4 and hit ok</li><li>On the list of users scroll then select employee4</li><li>Check the Read, Write and Modify boxes under the Allow header</li><li>Hit OK and you are done!</li></ol></div>', 
+    'add_full_permissions': '<div><ol><li>Click the lock next to the presentation_documents folder</li><li>Press the Add button</li><li>Select new_manager and hit ok</li><li>On the list of users scroll then select new_manager</li><li>Check the Full_control box under the Allow header</li><li>Hit OK and you are done!</li></ol></div>',
+    'remove_inherited_permission': '<div><ol><li>Click the lock next to important_file.txt</li><li>Click employee3</li><li>Look under the Deny column and check write & modify</li><li>Hit OK and you are done!</li></ol></div>',
+    'intern_permissions': '<div><ol><li>Click the lock next to the intern_subproject folder</li><li>Click the More Options button</li><li>Click the Edit Button</li><li>Click the Change Button</li><li>Click Intern & then OK</li><li>Under Allow, check create files/write data, create folders/append data, write attributes & write extended attributes</li><li>Under Deny, check delete subfolders and files & delete</li><li>Hit the OK button to close the modal</li><li>Hit the OK button and you are done!</li></ol></div>',
+    'remove_user_with_inheritance': '<div><ol><li>Click the lock next to important_file.txt</li><li>Click the More Options button</li><li>Uncheck "Include inheritable permissions from this objects parent"</li><li>Click Add</li><li>Click OK</li><li>Click employee3 under "Group or user names:"</li><li>Click Remove</li><li>Click Yes</li><li>Hit the OK button and you are done!</li></ol></div>',
+    'restrict_group_member': '<div><ol><li>Click the lock next to important_file.txt</li><li>Click the Add button</li><li>Click employee3 and hit the OK button</li><li>Click employee3 under "Group or user names:"</li><li>Under the Deny column, check Write and Modify</li><li>Hit the OK button and you are done!</li></ol></div>',
+    'let_ta_modify': '<div><ol><li>Click the lock next to the Lecture_Notes folder</li><li>Click the More Options button</li><li>Check the "Replace all child object permissions with inheritable permissions from this object" box</li><li>Click Yes</li><li>Click OK</li><li>Hit the OK button and you are done!</li></ol></div>',
+    'lost_inheritance': '<div><ol><li>Click the lock next to the Lecture_Notes folder</li><li>Click the More Options button</li><li>Check the "Replace all child object permissions with inheritable permissions from this object" box</li><li>Click Yes</li><li>Click OK</li><li>Hit the OK button and you are done!</li></ol></div>',
+};
 
-let permissions_panel = define_new_effective_permissions("permissions", true)
-let user_panel = define_new_user_select_field("new_user", "Choose User", function(selected_user) {
-    $('#permissions').attr('username', selected_user) 
-    $('#permissions').attr('filepath', selected_file.id.replace('_div',''))
-})
-
-$('#sidepanel').append(permissions_panel)
-$('#sidepanel').append(user_panel)
-$('#sidepanel').append("Selected File: ")
-$('#sidepanel').append(`<div id="file_div">(Click a file to select it.)</div>`)
-
-let d = define_new_dialog("dialog", "Permissions Info")
+const t = window.location.href.split('=')[1];
+let help = dict[t];
+$('#sidepanel').append('<div id ="instructions"><h3>Instructions</h3>' + help + '</div>');
 
 //i-icons
 function toggleDialog(icon){

@@ -39,3 +39,7 @@
 .no-close .ui-dialog-titlebar-close {
     display: none;
 }
+
+#instructions {
+    padding: 20px 20px 20px 20px;
+}
