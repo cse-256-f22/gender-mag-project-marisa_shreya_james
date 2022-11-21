@@ -76,9 +76,6 @@
                                         <button class="mturk-top-banner-button" data-bs-toggle="modal" data-bs-target="#myModal">
                                             Help
                                         </button>
-                                        <button onclick="validate()" class="mturk-top-banner-button" data-bs-toggle="modal" data-bs-target="#validateModal">
-                                            Check Answer
-                                        </button>
                                         <span class="mturk-top-banner-button mturk-top-banner-back-wh footer"
                                         id="mturk-top-banner-arrow">
                                         <i class="fa fa-chevron-up" id="mturk-top-banner-drop-down-button" style="display: none;">
@@ -89,6 +86,13 @@
                                 </span>
                             </span>
                         </span>
+                    </div>
+
+                    <div>
+                        <div id="task-summary">REPLACE</div>
+                        <button onclick="validate()" data-bs-toggle="modal" data-bs-target="#validateModal">
+                            Check Answer
+                        </button>
                     </div>
 
                     <!-- Validate Modal -->
@@ -166,7 +170,6 @@
                                                     <ol>
                                                         <li>Click the lock next to important_file.txt</li>
                                                         <li>Click employee3</li>
-                                                        <li>Look under the Allow column and uncheck write</li>
                                                         <li>Look under the Deny column and check write & modify</li>
                                                         <li>Hit OK and you're done!</li>
                                                     </ol>
@@ -461,7 +464,12 @@
                                                                 const context = contexts[tag];
                                                                 contextElem.dataset['tag'] = tag;
                                                                 contextElem.innerHTML = context;
+                                                                
+                                                                //Task Summary
                                                                 document.getElementById('mturk-top-banner-text').innerHTML = "Task: " + tag + " ---- You are logged in as administrator";
+                                                                document.getElementById('task-summary').innerHTML = "Your Task: " + contexts[tag];
+
+
                                                                 const xhrObj = new XMLHttpRequest();
                                                                 xhrObj.open('GET', './scenario-configs/' + tag + '.js', false);
                                                                 xhrObj.send('');
