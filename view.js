@@ -8,7 +8,7 @@ function indexRedirect() {
 
 // sidepanel
 let dict = { 
-    'remove_direct_permission': '<div><ol><li>Click the lock next to important_file.txt</li><li>Click employee3</li><li>Look under the Deny column and check write & modify</li><li>Hit OK and you are done!</li></ol></div>', 
+    'remove_direct_permission': '<div><ol><li>Click the lock next to <strong>important_file.txt</strong></li><li>Click employee3</li><li>Look under the Deny column and check <strong>"Write & Modify"</strong></li><li>Hit <strong>OK and</strong> you are done!</li></ol></div>', 
     'add_new_user':'<div><ol><li>Click the lock next to the presentation_documents folder</li><li>Press the Add button</li><li>Select employee4 and hit ok</li><li>On the list of users scroll then select employee4</li><li>Check the Read, Write and Modify boxes under the Allow header</li><li>Hit OK and you are done!</li></ol></div>', 
     'add_full_permissions': '<div><ol><li>Click the lock next to the presentation_documents folder</li><li>Press the Add button</li><li>Select new_manager and hit ok</li><li>On the list of users scroll then select new_manager</li><li>Check the Full_control box under the Allow header</li><li>Hit OK and you are done!</li></ol></div>',
     'remove_inherited_permission': '<div><ol><li>Click the lock next to important_file.txt</li><li>Click employee3</li><li>Look under the Deny column and check write & modify</li><li>Hit OK and you are done!</li></ol></div>',

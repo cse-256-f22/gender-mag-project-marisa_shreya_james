@@ -10,6 +10,10 @@
     margin-left: 10px;
 }
 
+#task-summary{
+    padding-top: 10px;
+}
+
 .ui-selected { 
     background: #007fff; 
     color: white; 
