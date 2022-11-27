@@ -12,13 +12,15 @@
 }
 
 .check_bttn{
-    margin: 10px 10px 10px 10px;
+    margin: 0px 10px 10px 20px;
     padding: 3px 3px 3px 3px;
 }
 
 #task-summary{
     margin-left: 7px;
     padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 20px;
 }
 
 .ui-selected { 

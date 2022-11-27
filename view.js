@@ -23,6 +23,9 @@ const t = window.location.href.split('=')[1];
 let help = dict[t];
 $('#sidepanel').append('<div id ="instructions"><h3>Instructions</h3>' + help + '</div>');
 
+$('#sidepanel').append('<button class="check_bttn" onclick="validate()" data-bs-toggle="modal" data-bs-target="#validateModal"> Check Answer </button>')
+
+
 //i-icons
 function toggleDialog(icon){
     d.dialog('open');

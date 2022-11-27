@@ -421,7 +421,7 @@ function validate_and_get_logs() {
                 let perm = id_to_permission[parseInt(ids[2])];
                 console.log('\t', username, ': ', perm, filepath);
 
-                $(document.getElementById(`allow-list`)).append(`<li id="allow-li">'\t', ${username}, ': ', ${perm}, ${filepath}/>`)
+                $(document.getElementById(`allow-list`)).append(`<li id="deny-li">${username} ⦁ ${filepath.split('/').pop().split('.')[0]} | ${perm}`)
             }
         } else {
             document.getElementById("allow-accordion").hidden = true;
@@ -437,7 +437,7 @@ function validate_and_get_logs() {
                 let perm = id_to_permission[parseInt(ids[2])];
                 console.log('\t', username, ': ', perm, filepath);
 
-                $(document.getElementById(`deny-list`)).append(`<li id="deny-li">'\t', ${username}, ': ', ${perm}, ${filepath}/>`)
+                $(document.getElementById(`deny-list`)).append(`<li id="deny-li">${username} ⦁ ${filepath.split('/').pop().split('.')[0]} | ${perm}`)
             }
         } else {
             document.getElementById("deny-accordion").hidden = true;
