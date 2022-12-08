@@ -7,24 +7,7 @@ function indexRedirect() {
   }
 
 // sidepanel
-let dict = { 
-    'remove_direct_permission': '<div><ol><li>Click the lock next to <strong>important_file.txt. </strong></li><li>Click employee3. </li><li>Look under the Deny column and check <strong>"Write" & "Modify"</strong>.</li><li>Click <strong>OK</strong> and you are done!</li></ol></div>', 
-    'add_new_user':'<div><ol><li>Click the lock next to the <strong>presentation_documents</strong> folder.</li><li>Press the <strong>Add</strong> button.</li><li>Select <strong>employee4</strong> and hit <strong>OK</strong>.</li><li>On the list of users scroll then select <strong>employee4</strong>.</li><li>Check the <strong>"Read", "Write" and "Modify"</strong> boxes under the <strong>Allow</strong> header.</li><li>Click <strong>OK</strong> and  you are done!</li></ol></div>', 
-    'add_full_permissions': '<div><ol><li>Click the lock next to the <strong>presentation_documents</strong> folder.</li><li>Press the <strong>Add</strong> button.</li><li>Select <strong>new_manager</strong> and click <strong>OK</strong>.</li><li>On the list of users, scroll then select <strong>new_manager</strong>.</li><li>Check the <strong>"Full_control"</strong> box under the <strong>Allow</strong> header.</li><li>Click <strong>OK</strong> and you are done!</li></ol></div>',
-    'remove_inherited_permission': '<div><ol><li>Click the lock next to <strong>important_file.txt</strong>.</li><li>Click <strong>employee3</strong>.</li><li>Look under the <strong>Deny</strong> column and check <strong>"Write" & "Modify"</strong>.</li><li>Click <strong>OK</strong> and you are done!</li></ol></div>',
-    'intern_permissions': '<div><ol><li>Click the lock next to the <strong>intern_subproject</strong> folder.</li><li>Click the <strong>More Options</strong> button.</li><li>Click the <strong>Edit</strong> button.</li><li>Click the <strong>Change</strong> button.</li><li>Click <strong>Intern</strong> & then <strong>OK</strong>.</li><li>Under the <strong>Allow</strong> header, check <strong>"create files/write data", "create folders/append data", and "write attributes & write extended attribute".</strong></li><li>Under <strong>Deny</strong>, check <strong>"delete subfolders" and "files & delete"</strong>.</li><li>Click the <strong>OK</strong> button to close the modal.</li><li>Click the <strong>OK</strong> button and you are done!</li></ol></div>',
-    'remove_user_with_inheritance': '<div><ol><li>Click the lock next to <strong>important_file.txt. </strong></li><li>Click the <strong>More Options</strong> button.</li><li>Uncheck <strong>"Include inheritable permissions from this objects parent"</strong>.</li><li>Click <strong>Add.</strong></li><li>Click <strong>OK.</strong></li><li>Under <strong>"Group or user names:"</strong> click <strong>employee3</strong>.</li><li>Click <strong>Remove</strong>.</li><li>Click <strong>Yes</strong>.</li><li>Click the <strong>OK</strong> button and you are done!</li></ol></div>',
-    'restrict_group_member': '<div><ol><li>Click the lock next to <strong>important_file.txt.</strong></li><li>Click the <strong>Add</strong> button.</li><li>Click <strong>employee3</strong> and click the <strong>OK</strong> button.</li><li>Under <strong>"Group or user names:"</strong> click <strong>employee3</strong>.</li><li>Under the <strong>Deny</strong> column, check <strong>"Write" and "Modify"</strong>.</li><li>Click the <strong>OK</strong> button and you are done!</li></ol></div>',
-    'let_ta_modify': '<div><ol><li>Click the lock next to the <strong>Lecture_Notes</strong> folder.</li><li>Click the <strong>More Options</strong> button.</li><li>Check the <strong>"Replace all child object permissions with inheritable permissions from this object" </strong> box.</li><li>Click <strong>Yes</strong>.</li><li>Click <strong>OK</strong>.</li><li>Click the <strong>OK</strong> button and you are done!</li></ol></div>',
-    'lost_inheritance': '<div><ol><li>Click the lock next to the <strong>Lecture_Notes</strong> folder.</li><li>Click the <strong>More Options</strong> button</li><li>Check the <strong>"Replace all child object permissions with inheritable permissions from this object"</strong> box.</li><li>Click <strong>Yes</strong>.</li><li>Click  <strong>OK</strong>.</li><li>Click the <strong>OK</strong> button and you are done!</li></ol></div>',
-};
-
-const t = window.location.href.split('=')[1];
-let help = dict[t];
-$('#sidepanel').append('<div id ="instructions"><h3>Instructions</h3>' + help + '</div>');
-
-// $('#sidepanel').append('<button class="check_bttn" onclick="validate()" data-bs-toggle="modal" data-bs-target="#validateModal"> Check Answer </button>')
-
+$('#sidepanel').append(how_to_menu());
 
 //i-icons
 function toggleDialog(icon){

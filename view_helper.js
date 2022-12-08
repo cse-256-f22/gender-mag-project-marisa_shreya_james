@@ -138,6 +138,52 @@ function define_single_select_list(id_prefix, on_selection_change = function(sel
     return select_list
 }
 
+function how_to_menu(){
+    let menu = $(`<div>
+    <h2>How To…</h2>
+    <button class="accordion">Edit a User’s File Permissions</button>
+    <div class="panel">
+    <ol>Click on the lock icon next to the file or folder you wish to update.</ol>
+    <ol>Click on the user whose permissions you want to edit under the “Group or user names:” menu</ol>
+    <ol>Click the checkboxes under allow to grant a user file permissions and under deny to take them away. Deny overrides any allowed permissions</ol>
+    <ol>Sometimes you might have to get into a little more detail. If this is the case, hit more options & then edit. You will be able to make more granular changes in this menu.</ol>
+    <ol>Once you are happy click ok & you are done!</ol>
+     	</div>
+    
+    <button class="accordion">Add A User to a File</button>
+    <div class="panel">
+      		<ol>Click on the lock icon next to the file or folder you wish to update. </ol>
+    <ol>Hit the “Add” button, select the user you wish to add & hit ok</ol>
+    <ol>Select the user you just added in the menu under “Group or user names:”</ol>
+    <ol>Select the file permissions you wish to give the user & hit ok when you’re done</ol>
+    </div>
+    
+    <button class="accordion">Remove a User From a File</button>
+    <div class="panel">
+      		<ol>Click on the lock icon next to the file or folder you wish to update. </ol>
+    <ol>Click on the user who you want to delete under the “Group or user names:” menu</ol>
+    <ol>Check all checkboxes under deny </ol>
+    <ol>Hit OK & you’re done</ol>
+    
+    </div>
+    
+    <button class="accordion">Edit Permissions for a Specific user in a Group</button>
+    <div class="panel">
+        <p>See the “Add a User to a File” instructions</p>
+    </div>
+    
+    <button class="accordion">Reset Folder Permissions to Original State</button>
+    <div class="panel">
+        <p>See the “Add a User to a File” instructions</p>
+    <ol>Click the lock next to the folder you want to reset</ol>
+    <ol>Click the More Options button</ol>
+    <ol>Check the "Replace all child object permissions with inheritable permissions from this object" box.</ol>
+    <ol>Click Yes, then ok & ok again and you’re done!</ol>
+    </div>
+    </div>`)
+    return menu
+}
+
  
 // define an element which will display effective permissions for a given file and user
 // It expects the file path to be stored in its *filepath* attribute, 
