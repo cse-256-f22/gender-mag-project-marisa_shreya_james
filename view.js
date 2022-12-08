@@ -23,7 +23,7 @@ const t = window.location.href.split('=')[1];
 let help = dict[t];
 $('#sidepanel').append('<div id ="instructions"><h3>Instructions</h3>' + help + '</div>');
 
-$('#sidepanel').append('<button class="check_bttn" onclick="validate()" data-bs-toggle="modal" data-bs-target="#validateModal"> Check Answer </button>')
+// $('#sidepanel').append('<button class="check_bttn" onclick="validate()" data-bs-toggle="modal" data-bs-target="#validateModal"> Check Answer </button>')
 
 
 //i-icons
@@ -41,8 +41,8 @@ function toggleDialog(icon){
 //Selected file
 function getFile(file_obj){
     $('#permissions').attr('filepath', file_obj.id.replace('_div',''))
-    $('#file_div').remove()
-    $('#sidepanel').append(`<div id="file_div"> > ${file_obj.textContent}</div>`)
+    // $('#file_div').remove()
+    // $('#sidepanel').append(`<div id="file_div"> > ${file_obj.textContent}</div>`)
 }
 
 //Validation function
