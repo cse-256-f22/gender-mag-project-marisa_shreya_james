@@ -139,48 +139,112 @@ function define_single_select_list(id_prefix, on_selection_change = function(sel
 }
 
 function how_to_menu(){
-    let menu = $(`<div>
+    let menu = $(`<div id="how-to-menu">
     <h2>How To…</h2>
-    <button class="accordion">Edit a User’s File Permissions</button>
-    <div class="panel">
-    <ol>Click on the lock icon next to the file or folder you wish to update.</ol>
-    <ol>Click on the user whose permissions you want to edit under the “Group or user names:” menu</ol>
-    <ol>Click the checkboxes under allow to grant a user file permissions and under deny to take them away. Deny overrides any allowed permissions</ol>
-    <ol>Sometimes you might have to get into a little more detail. If this is the case, hit more options & then edit. You will be able to make more granular changes in this menu.</ol>
-    <ol>Once you are happy click ok & you are done!</ol>
-     	</div>
-    
-    <button class="accordion">Add A User to a File</button>
-    <div class="panel">
-      		<ol>Click on the lock icon next to the file or folder you wish to update. </ol>
-    <ol>Hit the “Add” button, select the user you wish to add & hit ok</ol>
-    <ol>Select the user you just added in the menu under “Group or user names:”</ol>
-    <ol>Select the file permissions you wish to give the user & hit ok when you’re done</ol>
+    <div class="accordion" id="accordionExample">
+
+
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        Edit a User’s File Permissions
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <ol>Click on the lock icon next to the file or folder you wish to update.</ol>
+<ol>Click on the user whose permissions you want to edit under the “Group or user names:” menu</ol>
+<ol>Click the checkboxes under allow to grant a user file permissions and under deny to take them away. Deny overrides any allowed permissions</ol>
+<ol>Sometimes you might have to get into a little more detail. If this is the case, hit more options & then edit. You will be able to make more granular changes in this menu.</ol>
+<ol>Once you are happy click ok & you are done!</ol>
+      </div>
     </div>
-    
-    <button class="accordion">Remove a User From a File</button>
-    <div class="panel">
-      		<ol>Click on the lock icon next to the file or folder you wish to update. </ol>
-    <ol>Click on the user who you want to delete under the “Group or user names:” menu</ol>
-    <ol>Check all checkboxes under deny </ol>
-    <ol>Hit OK & you’re done</ol>
-    
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Add A User to a File
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ol>Click on the lock icon next to the file or folder you wish to update. </ol>
+<ol>Hit the “Add” button, select the user you wish to add & hit ok</ol>
+<ol>Select the user you just added in the menu under “Group or user names:”</ol>
+<ol>Select the file permissions you wish to give the user & hit ok when you’re done</ol>      
     </div>
-    
-    <button class="accordion">Edit Permissions for a Specific user in a Group</button>
-    <div class="panel">
-        <p>See the “Add a User to a File” instructions</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Remove a User From a File
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+         <ol>Click on the lock icon next to the file or folder you wish to update. </ol>
+            <ol>Click on the user who you want to delete under the “Group or user names:” menu</ol>
+            <ol>Check all checkboxes under deny </ol>
+            <ol>Hit OK & you’re done</ol>
+      </div>
     </div>
-    
-    <button class="accordion">Reset Folder Permissions to Original State</button>
-    <div class="panel">
-        <p>See the “Add a User to a File” instructions</p>
-    <ol>Click the lock next to the folder you want to reset</ol>
-    <ol>Click the More Options button</ol>
-    <ol>Check the "Replace all child object permissions with inheritable permissions from this object" box.</ol>
-    <ol>Click Yes, then ok & ok again and you’re done!</ol>
+  </div>
+
+
+  <div class="accordion-item">
+  <h2 class="accordion-header" id="headingFour">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+    Edit Permissions for a Specific User in a Group
+    </button>
+  </h2>
+  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+    <p>See the “Add a User to a File” instructions</p>
     </div>
-    </div>`)
+  </div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingFive">
+  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+  Reset Folder Permissions to Original State
+  </button>
+</h2>
+<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+  <div class="accordion-body">
+  <ol>Click the lock next to the folder you want to reset</ol>
+<ol>Click the More Options button</ol>
+<ol>Check the "Replace all child object permissions with inheritable permissions from this object" box.</ol>
+<ol>Click Yes, then ok & ok again and you’re done!</ol>
+
+  </div>
+</div>
+</div>
+
+    </div>
+    </div>
+    `)
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
     return menu
 }
 
